@@ -1,3 +1,4 @@
+<!-- Proyecto -->
 <!-- Proyecto de aplicaciones web
 Documento HTML
 Tema del proyecto: Moyafimls
@@ -8,16 +9,18 @@ Integrantes:
 
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>MoyaFilms</title>
 
     <!-- attach our stylesheet -->
     <link rel="stylesheet" href="nuevo_moyafimls.css">
 </head>
+
 <body>
 
-    
+
     <!-- the header -->
     <header>
 
@@ -70,117 +73,127 @@ Integrantes:
             <!-- <button class="button">
                 <span>register</span>
             </button> -->
-            
+
 
         </form>
 
     </div>
-    
-  <script>
-    function validacion(){
-        valinum = document.getElementById('cedula').value;
-        if(isNaN(valinum)){
-            alert("El numero de cedula debe de ser numerico");
-            return false;
-        }
-        return true;
-    }
-    function campo_cedula(){
-        lacedu = document.getElementById('cedula').value;
-        if(lacedu == null || lacedu.length == 0){
-            alert("Debe llenar el campo de la cedula");
-            return false;
-        }
-        return true;
-    }
-    
-    function campo_apellido(){
-        elape = document.getElementById('apellido').value;
-        if(elape == null || elape.length == 0){
-            alert("Debe llenar el campo del apellido");
-            return false;
-        }
-        return true;
-    }
-    function campo_nombre(){
-        elnom = document.getElementById('nombre').value;
-        if(elnom == null || elnom.length == 0){
-            alert("Debe llenar el campo nombre");
-            return false;
-        }
-        return true;
-    }
-    function campo_ciudad(){
-        laciu = document.getElementById('ciudad').value;
-        if(laciu == null || laciu.length == 0){
-            alert("Debe llenar el campo ciudad");
-            return false;
-        }
-        return true;
-    }
-    function campo_direccion(){
-        ladir = document.getElementById('direccion').value;
-        if(ladir == null || ladir.length == 0){
-            alert("Debe llenar el campo direccion");
-            return false;
-        }
-        return true;
-    }
-    function campo_telefono(){
-        eltel = document.getElementById('telefono').value;
-        if(eltel == null || eltel.length == 0){
-            alert("Debe llenar el campo telefono");
-            return false;
-        }
-        return true;
-    }
-    function campo_correo(){
-        elcorreo = document.getElementById('correo').value;
-        if(elcorreo == null || elcorreo.length == 0){
-            alert("Debe llenar el campo correo electronico");
-            return false;
-        }
-        return true;
-    }
-    function validanumero(){
-        telf=document.getElementById('telefono').value;
-        if(!(/^\d{10}$/.test(telf))){
-            alert("Numero incorrecto");
-            return false;
-        }
-        return true;
-    }
-    function validacorreo(){
-        cor=document.getElementById('correo').value;
-        if(!(/\w+([-+.’]\w+)*@\w+([-.]\w+)*/.test(cor))){  
-      alert ("email incorrecto");
-      return false;
-    } 
+
+    <script>
+        function validacion() {
+            valinum = document.getElementById('cedula').value;
+            if (isNaN(valinum)) {
+                alert("El numero de cedula debe de ser numerico");
+                return false;
+            }
             return true;
         }
-        function almacenar(){
-            cedula=document.getElementById("cedula").value;
-            apellido=document.getElementById("apellido").value;
-            nombre=document.getElementById("nombre").value;
-            ciudad=document.getElementById("ciudad").value;
-            direccion=document.getElementById("direccion").value;
-            telefono=document.getElementById("telefono").value;
-            correo=document.getElementById("correo").value;
 
-            document.cookie = "cedula="+cedula;
-            document.cookie = "apellido="+apellido;
-            document.cookie = "nombre="+nombre;
-            document.cookie = "ciudad="+ciudad;
-            document.cookie = "direccion="+direccion;
-            document.cookie = "telefono="+telefono;
-            document.cookie = "correo electronico="+correo;
+        function campo_cedula() {
+            lacedu = document.getElementById('cedula').value;
+            if (lacedu == null || lacedu.length == 0) {
+                alert("Debe llenar el campo de la cedula");
+                return false;
+            }
+            return true;
         }
+
+        function campo_apellido() {
+            elape = document.getElementById('apellido').value;
+            if (elape == null || elape.length == 0) {
+                alert("Debe llenar el campo del apellido");
+                return false;
+            }
+            return true;
+        }
+
+        function campo_nombre() {
+            elnom = document.getElementById('nombre').value;
+            if (elnom == null || elnom.length == 0) {
+                alert("Debe llenar el campo nombre");
+                return false;
+            }
+            return true;
+        }
+
+        function campo_ciudad() {
+            laciu = document.getElementById('ciudad').value;
+            if (laciu == null || laciu.length == 0) {
+                alert("Debe llenar el campo ciudad");
+                return false;
+            }
+            return true;
+        }
+
+        function campo_direccion() {
+            ladir = document.getElementById('direccion').value;
+            if (ladir == null || ladir.length == 0) {
+                alert("Debe llenar el campo direccion");
+                return false;
+            }
+            return true;
+        }
+
+        function campo_telefono() {
+            eltel = document.getElementById('telefono').value;
+            if (eltel == null || eltel.length == 0) {
+                alert("Debe llenar el campo telefono");
+                return false;
+            }
+            return true;
+        }
+
+        function campo_correo() {
+            elcorreo = document.getElementById('correo').value;
+            if (elcorreo == null || elcorreo.length == 0) {
+                alert("Debe llenar el campo correo electronico");
+                return false;
+            }
+            return true;
+        }
+
+        function validanumero() {
+            telf = document.getElementById('telefono').value;
+            if (!(/^\d{10}$/.test(telf))) {
+                alert("Numero incorrecto");
+                return false;
+            }
+            return true;
+        }
+
+        function validacorreo() {
+            cor = document.getElementById('correo').value;
+            if (!(/\w+([-+.’]\w+)*@\w+([-.]\w+)*/.test(cor))) {
+                alert("email incorrecto");
+                return false;
+            }
+            return true;
+        }
+
+        function almacenar() {
+            cedula = document.getElementById("cedula").value;
+            apellido = document.getElementById("apellido").value;
+            nombre = document.getElementById("nombre").value;
+            ciudad = document.getElementById("ciudad").value;
+            direccion = document.getElementById("direccion").value;
+            telefono = document.getElementById("telefono").value;
+            correo = document.getElementById("correo").value;
+
+            document.cookie = "cedula=" + cedula;
+            document.cookie = "apellido=" + apellido;
+            document.cookie = "nombre=" + nombre;
+            document.cookie = "ciudad=" + ciudad;
+            document.cookie = "direccion=" + direccion;
+            document.cookie = "telefono=" + telefono;
+            document.cookie = "correo electronico=" + correo;
+        }
+
         function MostrarCookies() {
             datosEnCookies = document.cookie;
             alert("Datos en las cookies: " + datosEnCookies);
         }
     </script>
-    
+
     <main>
 
 
@@ -284,4 +297,5 @@ Integrantes:
     </footer> -->
 
 </body>
+
 </html>
