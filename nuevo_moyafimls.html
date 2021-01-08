@@ -1,0 +1,287 @@
+<!-- Proyecto de aplicaciones web
+Documento HTML
+Tema del proyecto: Moyafimls
+Integrantes:
+    * Delgado Bravo Luis Alfredo
+    * Mendoza Parraga Andres Gonzalo
+    * Toala Ordoñez Leonardo Alexander -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>MoyaFilms</title>
+
+    <!-- attach our stylesheet -->
+    <link rel="stylesheet" href="nuevo_moyafimls.css">
+</head>
+<body>
+
+    
+    <!-- the header -->
+    <header>
+
+        <!-- our main logo -->
+        <a id="logo" href="index.html">
+            <img src="MOYAFILMS_nuevo.png" alt="Logo">
+        </a>
+
+        <!-- main navigation links -->
+        <nav>
+            <ul>
+                <li><a href="#">Equipo de trabajo</a></li>
+                <li><a href="#">Iniciar sesion</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- the content -->
+    <div class="container">
+        <h2>Registro</h2>
+        <form action="" method="get" onsubmit="return validacion(), validacorreo(), campo_cedula(), 
+        campo_apellido(), campo_nombre(), campo_ciudad(), campo_direccion(), campo_telefono(), 
+        campo_correo(), almacenar()">
+            <!-- <div class="registro-switch">
+            <input type="radio" name="sex" value="F" id="sex_f" class="registro-switch-input" checked>
+            <label for="sex_f" class="registro-switch-label">Femenino</label>
+            <input type="radio" name="sex" value="M" id="sex_m" class="registro-switch-input">
+            <label for="sex_m" class="registro-switch-label">Masculino</label>
+            </div> -->
+            <input type="text" class="texto" placeholder="Apellidos" id="apellido" autofocus required />
+            <input type="text" class="texto" placeholder="Nombres" id="nombre" autofocus required />
+            <!-- <p>
+            
+            Estado Civil: 
+                <p align=left>
+                <input type="radio" name="Estado Civil" value="S" /> Soltero <br>
+                <input type="radio" name="Estado Civil" value="C" /> Casado <br>
+                <input type="radio" name="Estado Civil" value="D" /> Divorciado <br>
+                <input type="radio" name="Estado Civil" value="V" /> Viudo <br>
+                <input type="radio" name="Estado Civil" value="U" /> Unión Libre <br>
+                </p>
+            </p> -->
+            <input type="text" class="texto" placeholder="Ciudad" id="ciudad" autofocus required />
+            <input type="text" class="texto" placeholder="Direccion" id="direccion" autofocus required />
+            <input type="text" class="texto" placeholder="Telefono" id="telefono" autofocus required />
+            <input type="email" class="email" placeholder="Correo Electronico" id="correo" autofocus required />
+            <input type="password" class="pwd" placeholder="Contraseña" id="contraseña" autofocus required />
+            <input type="submit" class="boton-registro" value="Registrarse" autofocus required />
+            <!-- <button class="button">
+                <span>register</span>
+            </button> -->
+            
+
+        </form>
+
+    </div>
+    
+  <script>
+    function validacion(){
+        valinum = document.getElementById('cedula').value;
+        if(isNaN(valinum)){
+            alert("El numero de cedula debe de ser numerico");
+            return false;
+        }
+        return true;
+    }
+    function campo_cedula(){
+        lacedu = document.getElementById('cedula').value;
+        if(lacedu == null || lacedu.length == 0){
+            alert("Debe llenar el campo de la cedula");
+            return false;
+        }
+        return true;
+    }
+    
+    function campo_apellido(){
+        elape = document.getElementById('apellido').value;
+        if(elape == null || elape.length == 0){
+            alert("Debe llenar el campo del apellido");
+            return false;
+        }
+        return true;
+    }
+    function campo_nombre(){
+        elnom = document.getElementById('nombre').value;
+        if(elnom == null || elnom.length == 0){
+            alert("Debe llenar el campo nombre");
+            return false;
+        }
+        return true;
+    }
+    function campo_ciudad(){
+        laciu = document.getElementById('ciudad').value;
+        if(laciu == null || laciu.length == 0){
+            alert("Debe llenar el campo ciudad");
+            return false;
+        }
+        return true;
+    }
+    function campo_direccion(){
+        ladir = document.getElementById('direccion').value;
+        if(ladir == null || ladir.length == 0){
+            alert("Debe llenar el campo direccion");
+            return false;
+        }
+        return true;
+    }
+    function campo_telefono(){
+        eltel = document.getElementById('telefono').value;
+        if(eltel == null || eltel.length == 0){
+            alert("Debe llenar el campo telefono");
+            return false;
+        }
+        return true;
+    }
+    function campo_correo(){
+        elcorreo = document.getElementById('correo').value;
+        if(elcorreo == null || elcorreo.length == 0){
+            alert("Debe llenar el campo correo electronico");
+            return false;
+        }
+        return true;
+    }
+    function validanumero(){
+        telf=document.getElementById('telefono').value;
+        if(!(/^\d{10}$/.test(telf))){
+            alert("Numero incorrecto");
+            return false;
+        }
+        return true;
+    }
+    function validacorreo(){
+        cor=document.getElementById('correo').value;
+        if(!(/\w+([-+.’]\w+)*@\w+([-.]\w+)*/.test(cor))){  
+      alert ("email incorrecto");
+      return false;
+    } 
+            return true;
+        }
+        function almacenar(){
+            cedula=document.getElementById("cedula").value;
+            apellido=document.getElementById("apellido").value;
+            nombre=document.getElementById("nombre").value;
+            ciudad=document.getElementById("ciudad").value;
+            direccion=document.getElementById("direccion").value;
+            telefono=document.getElementById("telefono").value;
+            correo=document.getElementById("correo").value;
+
+            document.cookie = "cedula="+cedula;
+            document.cookie = "apellido="+apellido;
+            document.cookie = "nombre="+nombre;
+            document.cookie = "ciudad="+ciudad;
+            document.cookie = "direccion="+direccion;
+            document.cookie = "telefono="+telefono;
+            document.cookie = "correo electronico="+correo;
+        }
+        function MostrarCookies() {
+            datosEnCookies = document.cookie;
+            alert("Datos en las cookies: " + datosEnCookies);
+        }
+    </script>
+    
+    <main>
+
+
+        <!-- DESCOMENTAR DE AQUI HASTA ANTES DE QUE TERMINE EL MAIN
+
+        comentario: hero content
+
+        <div class="hero">
+
+            comentario: content for the hero
+
+            <div class="hero-content">
+                <h1 class="hero-title">Here is Title</h1>
+                <p>The best and most comprehensive website ever.</p>
+
+                <a href="#">Learn More</a>
+                <a href="#">Sign Up</a>
+            </div>
+        </div>
+
+        comentarios: features section
+
+        <div class="site-section">
+        <div class="site-section-inside">
+
+            <div class="section-header">
+                <h2>Key Features</h2>
+            </div>
+
+            <div class="feature-box">
+                <img src="img/like.png" alt="Easy to Use">
+                <h5>Easy to Use</h5>
+                <p>Just think of how easy this is to use. Toddlers can do it. So can you!</p>
+            </div>
+
+            <div class="feature-box">
+                <img src="img/faces.png" alt="Fun to Use">
+                <h5>Fun to Use</h5>
+                <p>Just think of how easy this is to use. Toddlers can do it. So can you!</p>
+            </div>
+
+            <div class="feature-box">
+                <img src="img/heart.png" alt="Fun to Use">
+                <h5>You'll Love It</h5>
+                <p>Just think of how easy this is to use. Toddlers can do it. So can you!</p>
+            </div>
+
+        </div>
+        </div>
+
+        comentarios: testimonials section
+        <div class="site-section site-section-secondary">
+        <div class="site-section-inside">
+
+            <div class="section-header">
+                <h2>What the people say</h2>
+            </div>
+
+            <div class="testimonial-box">
+                <div class="testimonial-content">
+                    Their service is by far the most influential I've ever seen.
+                </div>
+                <div class="testimonial-author">
+                    <img src="img/david.jpg" alt="David East">
+                    <h5>David East</h5>
+                    <span>King of Firebase</span>
+                </div>
+            </div>
+
+            <div class="testimonial-box">
+                <div class="testimonial-content">
+                    Their service is by far the most influential I've ever seen.
+                </div>
+                <div class="testimonial-author">
+                    <img src="img/holly.jpg" alt="Holly Lloyd">
+                    <h5>Holly Lloyd</h5>
+                    <span>Queen of Scotch</span>
+                </div>
+            </div>
+
+            <div class="testimonial-box">
+                <div class="testimonial-content">
+                    Their service is by far the most influential I've ever seen.
+                </div>
+                <div class="testimonial-author">
+                    <img src="img/brad.jpg" alt="Brad Green">
+                    <h5>Brad Green</h5>
+                    <span>King of Angular</span>
+                </div>
+            </div>
+
+        </div>
+        </div> -->
+
+    </main>
+
+    <!-- the footer -->
+    <!-- <footer>
+        <img src="img/avatar.jpeg" alt="Footer Logo">
+        <span>My Website<br>Copyright &copy; 2016-3010 </span>
+    </footer> -->
+
+</body>
+</html>
